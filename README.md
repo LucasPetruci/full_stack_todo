@@ -24,7 +24,8 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados em sua 
 3. **Configure o .env dentro de todo_back**  
 
 4. **Depois rode o docker-compose**
+```sh
     docker-compose up -d
-
+```
 
 
