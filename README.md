@@ -13,7 +13,9 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados em sua 
 
 1. **Clonar o Repositório**  
    Clone o repositório em sua máquina local:
+```sh
    git clone  https://github.com/LucasPetruci/full_stack_todo
+```
    
 
 2. **Configurar Variaveis de ambiente**  
