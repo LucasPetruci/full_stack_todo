@@ -7,8 +7,8 @@ services:
     restart: always
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: teste
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: teste1234567891
+      POSTGRES_DB: postgresdb
     volumes:
       - pg-data:/var/lib/postgresql/data
     networks:
