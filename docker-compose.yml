@@ -2,19 +2,19 @@ services:
   pgsql:
     image: postgres:alpine
     ports:
-      - "${POSTGRES_PORT}:5432"
-    container_name: ${POSTGRES_HOST}
+      - "5432:5432"
+    container_name: fullstack_dev
     restart: always
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: teste
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - pg-data:/var/lib/postgresql/data
     networks:
       - iff
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -23,8 +23,8 @@ services:
     image: dpage/pgadmin4
     container_name: aws_pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_USER}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      - PGADMIN_DEFAULT_EMAIL: "teste@gmail.com"
+      - PGADMIN_DEFAULT_PASSWORD: "1q2w3e4r"
     ports:
       - '8080:80'
     networks:
@@ -36,6 +36,10 @@ services:
       context: ./todo_back/todo-list
       dockerfile: Dockerfile
     restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "teste1234567891"
+      POSTGRES_DB: "postgresdb"
     ports:
       - "3000:3000"
     depends_on:
