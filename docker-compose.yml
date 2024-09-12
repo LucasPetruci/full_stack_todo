@@ -40,6 +40,7 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "teste1234567891"
       POSTGRES_DB: "postgresdb"
+      POSTGRES_HOST: "postgresdb.cs1aduy0ojnz.us-east-1.rds.amazonaws.com:5432"
     ports:
       - "3000:3000"
     depends_on:
